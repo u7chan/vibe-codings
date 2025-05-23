@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ピカチュウのミニゲーム</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>ピカチュウと遊ぼう！</h1>
+      <div class="game-layout">
+        <div class="left-panel">
+          <div class="score-board">
+            <div class="score">スコア: <span id="score">0</span></div>
+            <div class="lives">ライフ: <span id="lives">3</span></div>
+            <div class="high-score">
+              最高スコア: <span id="highScore">0</span>
+            </div>
+          </div>
+          <div class="controls">
+            <p>矢印キーでピカチュウを動かして、星を集めよう！</p>
+            <p>雷雲に当たらないように気をつけて！</p>
+            <div class="button-group">
+              <button id="startButton">ゲーム開始</button>
+              <button id="pauseButton" disabled>一時停止</button>
+              <button id="fullscreenButton">フルスクリーン</button>
+            </div>
+          </div>
+        </div>
+        <div class="game-area">
+          <canvas id="gameCanvas" width="600" height="450"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
