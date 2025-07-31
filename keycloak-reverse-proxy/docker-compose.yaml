@@ -5,6 +5,7 @@ services:
       - "8000:8000"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./app:/usr/share/nginx/html/app
 
   keycloak:
     image: quay.io/keycloak/keycloak:latest
