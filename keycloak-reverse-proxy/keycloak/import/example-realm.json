@@ -1,0 +1,26 @@
+{
+  "realm": "example",
+  "displayName": "Example Realm",
+  "enabled": true,
+  "users": [
+    {
+      "username": "example",
+      "enabled": true,
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "testuser@example.com",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "test",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "offline_access",
+        "uma_authorization"
+      ]
+    }
+  ]
+}
