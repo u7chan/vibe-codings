@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keycloak OIDC Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .status {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-weight: 500;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .user-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .user-info h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .user-info p {
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .user-info strong {
+            color: #495057;
+            display: inline-block;
+            width: 120px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .info-section {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .info-section h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .info-section ul {
+            margin-left: 20px;
+        }
+
+        .info-section li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            .logo {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔐 OIDC Demo</div>
+        <div class="subtitle">Keycloak OpenID Connect デモアプリケーション</div>
+        
+        <div class="status">
+            <h3>認証済み</h3>
+            <p>OAuth2 Proxyによる認証が成功しました！</p>
+        </div>
+        
+        <div class="info-section">
+            <h4>🎉 認証フローの説明</h4>
+            <ul>
+                <li>このページにアクセスする際、OAuth2 Proxyが認証状態をチェック</li>
+                <li>未認証の場合、自動的にKeycloakログイン画面にリダイレクト</li>
+                <li>認証成功後、このページが表示されます</li>
+                <li>すべての認証処理はサーバーサイドで実行</li>
+            </ul>
+        </div>
+
+        <div class="user-info">
+            <h3>認証情報</h3>
+            <p><strong>認証方式:</strong> OAuth2 Proxy + Keycloak OIDC</p>
+            <p><strong>プロバイダ:</strong> Keycloak (Example Realm)</p>
+            <p><strong>セキュリティ:</strong> サーバーサイド認証</p>
+            <p><strong>セッション:</strong> HTTPクッキーベース</p>
+        </div>
+        
+        <div>
+            <a href="/oauth2/sign_out" class="btn">ログアウト</a>
+        </div>
+        
+        <div class="footer">
+            <p>Powered by <a href="http://localhost:8000/keycloak" target="_blank">Keycloak</a> + <a href="https://oauth2-proxy.github.io/oauth2-proxy/" target="_blank">OAuth2 Proxy</a></p>
+            <p>テストユーザー: testuser / password</p>
+        </div>
+    </div>
+</body>
+</html>
